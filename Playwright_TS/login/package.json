@@ -1,0 +1,13 @@
+{
+  "name": "login-automation",
+  "version": "1.0.0",
+  "description": "Playwright TypeScript login automation demo",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.45.0",
+    "typescript": "^5.4.0"
+  }
+}

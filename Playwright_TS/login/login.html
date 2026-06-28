@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+      width: 340px;
+    }
+    h1 { text-align: center; margin-bottom: 28px; font-size: 1.5rem; color: #333; }
+    label { display: block; margin-bottom: 6px; font-size: 0.9rem; color: #555; }
+    input {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 18px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    input:focus { outline: none; border-color: #4a90e2; }
+    button {
+      width: 100%;
+      padding: 11px;
+      background: #4a90e2;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover { background: #357abd; }
+    #error-message {
+      display: none;
+      color: #e74c3c;
+      background: #fdecea;
+      border: 1px solid #f5c6cb;
+      border-radius: 5px;
+      padding: 10px 12px;
+      margin-top: 16px;
+      font-size: 0.9rem;
+    }
+    #welcome-message {
+      display: none;
+      color: #27ae60;
+      background: #eafaf1;
+      border: 1px solid #a9dfbf;
+      border-radius: 5px;
+      padding: 10px 12px;
+      margin-top: 16px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Login</h1>
+    <label for="user-name">Username</label>
+    <input type="text" id="user-name" placeholder="Enter username" />
+
+    <label for="password">Password</label>
+    <input type="password" id="password" placeholder="Enter password" />
+
+    <button id="login-button">Login</button>
+
+    <div id="error-message">Invalid username or password. Please try again.</div>
+    <div id="welcome-message">Welcome, admin! You have logged in successfully.</div>
+  </div>
+
+  <script>
+    const VALID_USER = 'admin';
+    const VALID_PASS = 'admin123';
+
+    document.getElementById('login-button').addEventListener('click', function () {
+      const user = document.getElementById('user-name').value;
+      const pass = document.getElementById('password').value;
+      const errorEl = document.getElementById('error-message');
+      const welcomeEl = document.getElementById('welcome-message');
+
+      errorEl.style.display = 'none';
+      welcomeEl.style.display = 'none';
+
+      if (user === VALID_USER && pass === VALID_PASS) {
+        welcomeEl.style.display = 'block';
+      } else {
+        errorEl.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>
