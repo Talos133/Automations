@@ -1,0 +1,16 @@
+{
+  "name": "api-test",
+  "version": "1.0.0",
+  "description": "Playwright TypeScript API tests for a library book borrowing system",
+  "scripts": {
+    "test": "playwright test",
+    "server": "node server/server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.45.0",
+    "typescript": "^5.4.0"
+  }
+}
